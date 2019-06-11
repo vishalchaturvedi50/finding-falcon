@@ -18,6 +18,13 @@
   <div class="bg-overlay"> </div>
 
   <app-root></app-root>
+
+  <script>
+    /* FIX FOR Video not being played sometime on load */
+    document.onload = function () {
+      document.getElementsByTagName('video-bg')[0].play();
+    };
+  </script>
 </body>
 
 </html>
