@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppService } from './service/app.service';
 import { IntroductionComponent } from './introduction/introduction.component';
+import { SelectplanetsComponent } from './selectplanets/selectplanets.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    SelectplanetsComponent
   ],
   imports: [
     BrowserModule,
