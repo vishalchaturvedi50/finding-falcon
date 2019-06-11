@@ -1,7 +1,7 @@
 @import "./../../commonstyle";
 
 :host {
-  min-height: 90vh;
+ /*  min-height: 90vh; */
   @include flexProperty(column, unset, center);
 }
 
@@ -17,9 +17,5 @@
       color: $white;
       font-variant: petite-caps;
     }
-  }
-  .btn-warning {
-    border-radius: 0;
-    font-size: #{$oneptfive}em;
   }
 }

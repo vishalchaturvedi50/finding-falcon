@@ -1,5 +1,6 @@
-@import "./../commonstyle";
+@import "../commonstyle";
 
-.main-heading {
-  color: $orange;
+.router-div {
+  min-height: 85vh;
+  @include flexProperty(row, unset, unset);
 }

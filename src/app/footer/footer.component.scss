@@ -1,0 +1,9 @@
+@import "../../commonstyle";
+.footer {
+  position: sticky;
+  bottom: 0;
+  .btn-warning {
+    border-radius: 0;
+    font-size: #{$one}em;
+  }
+}
