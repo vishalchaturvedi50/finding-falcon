@@ -1,7 +1,14 @@
+/* COMMON VARIABLE DECLARATION */
+$whitesmoke: whitesmoke;
+$white: white;
+$oneptfive: 1.5;
+$one: 1;
+$orange: orange;
+
+/* MIXIN FOR FLEX PROPERTY */
 @mixin flexProperty($flexDirection, $alignItem, $justifyContent) {
   display: flex;
   flex-direction: $flexDirection;
   align-items: $alignItem;
   justify-content: $justifyContent;
 }
-

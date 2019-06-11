@@ -6,22 +6,20 @@
 }
 
 .parent-div {
-  .desc-div {
-    margin: auto;
-  }
   .desc-title {
-    color: whitesmoke;
+    color: $whitesmoke;
   }
   .desc-plantes {
     img {
       min-height: 5em;
     }
     figcaption {
-      color: white;
+      color: $white;
+      font-variant: petite-caps;
     }
   }
   .btn-warning {
     border-radius: 0;
-    font-size: 1.5rem;
+    font-size: #{$oneptfive}em;
   }
 }

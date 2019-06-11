@@ -1,26 +1,27 @@
+<!-- PARENT CONTAINER -->
 <div class="d-flex row parent-div p-1">
 
+  <!-- 9/12 width div which holds heading and images -->
   <div class="col-md-9 desc-div order-md-0">
     <h3 class="desc-title text-justify ">
       King Shan has received intelligence that Al Falcone is in hiding in one of these 6 planets.
     </h3>
-
     <div class="d-flex row">
-      <figure class="col-md-2 col-4 desc-plantes text-center"
-        *ngFor="let item of appService.planetsList;let id=index">
+      <figure class="col-md-2 col-4 desc-plantes text-center" *ngFor="let item of appService.planetsList;let id=index">
         <img class="img-fluid" src="./assets/planets/{{id+1}}.svg" />
         <figcaption>{{item.name}}</figcaption>
       </figure>
     </div>
-
     <h3 class="desc-title text-justify ">
       However he has limited resources at his disposal & can send his army to only 4 of these
       planets.
     </h3>
   </div>
+  <!-- 3/12 width div holding king shan image -->
   <div class="col-md-3 text-center order-first order-md-1">
     <img src="./assets/kingshan.png" class="img-fluid" />
   </div>
+  <!-- 100% width container holding large button to kickstart -->
   <div class="col-md-12 order-md-2 text-center">
     <button class="btn btn-warning">Let's find out the Falcone !</button>
   </div>
