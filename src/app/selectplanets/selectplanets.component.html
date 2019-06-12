@@ -4,9 +4,11 @@
   <figure [id]="item.name" [ngClass]="selectedPlanets.indexOf(item.name)>-1?'selected':''"
     class="col-6 col-md-4 desc-plantes text-center p-2" *ngFor="let item of appService.planetsList;let id=index"
     (click)="onClickOfPlanetFn(item.name)">
-    <img class="img" src="./assets/planets/{{id+1}}.svg" />
+    <img class="img" src="./assets/planets/{{item.distance}}.svg" />
     <figcaption>
       <span>{{item.name}}</span> | <span>{{item.distance}} megamiles</span>
     </figcaption>
   </figure>
 </div>
+
+<app-footer [showNextRouteBtn]="selectedPlanets.length==4"></app-footer>

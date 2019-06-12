@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { routePaths } from '../app-routing.module';
 import { AppService } from '../service/app.service';
 import { Route, Routes, Router, NavigationEnd } from '@angular/router';
@@ -11,6 +11,7 @@ import { Route, Routes, Router, NavigationEnd } from '@angular/router';
 })
 export class FooterComponent implements OnInit {
 
+  @Input() showNextRouteBtn: boolean = false;
 
   /* varible to hold the path of next screen */
   public nextRouteUrl: string = "";
@@ -41,7 +42,7 @@ export class FooterComponent implements OnInit {
       case `/${routePaths.selectplanets}`: nextUrl = routePaths.selectvehicles;
         break;
     }
-    this.nextRouteUrl = nextUrl;
+    this.nextRouteUrl = `/${nextUrl}`;
   }
 
 }
