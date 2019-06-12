@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { SelectplanetsComponent } from './selectplanets/selectplanets.component';
+import { SelectvehicleComponent } from './selectvehicle/selectvehicle.component';
 
 export const routePaths = {
-  selectplanets: "selectplanets"
+  selectplanets: "selectplanets",
+  selectvehicles: "selectvehicles"
 }
 
 const routes: Routes = [
@@ -13,6 +15,9 @@ const routes: Routes = [
   },
   {
     path: routePaths.selectplanets, component: SelectplanetsComponent
+  },
+  {
+    path: routePaths.selectvehicles, component: SelectvehicleComponent
   }
 ];
 

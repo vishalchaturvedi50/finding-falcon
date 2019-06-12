@@ -8,6 +8,7 @@ import { IntroductionComponent } from './introduction/introduction.component';
 import { SelectplanetsComponent } from './selectplanets/selectplanets.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { SelectvehicleComponent } from './selectvehicle/selectvehicle.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HeaderComponent } from './header/header.component';
     IntroductionComponent,
     SelectplanetsComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    SelectvehicleComponent
   ],
   imports: [
     BrowserModule,
