@@ -20,23 +20,32 @@ export class SelectvehicleComponent implements OnInit {
 
   public currentIndex: number = 0;
 
+  /* ARRAY TO HOLD TOTAL TIME  */
+  public totalTimeArr: Array<number> = [];
+
   constructor(public appService: AppService) { }
 
   ngOnInit() {
-    this.currentVehicleList = this.appService.vehicleList;
+    this.currentVehicleList = JSON.parse(JSON.stringify(this.appService.vehicleList));
     this.selectedPlanets = this.appService.falconeRequestData.planet_names;
   }
 
   /* Function to help us with vehicle selection */
-  vehicleSelectionFn(vehicleName: string) {
-    this.selectedVehicles[this.currentIndex] = vehicleName;
+  vehicleSelectionFn(vehicle: IVehicles, index: number) {
+    this.selectedVehicles[this.currentIndex] = vehicle.name;
+
+    //MODIFY TIME ACCORDINGLY
+    let selectedPlanet = this.appService.planetsList.filter(planet =>
+      planet.name == this.selectedPlanets[this.currentIndex]);
+    if (selectedPlanet) {
+      this.totalTimeArr[this.currentIndex] = selectedPlanet[0].distance / vehicle.speed;
+    }
   }
 
   /* Function to modify current index */
   modifyCurrentIndexFn(ind: number) {
     let newIdx = this.currentIndex + ind;
     this.currentIndex = newIdx < 0 ? 0 : newIdx > 3 ? 4 : newIdx;
-    this.setCurrentVehicleListFn();
   }
 
   /* WHETHER OR NOT TO ENABLE NEXT ROUTE BTN */
@@ -45,22 +54,15 @@ export class SelectvehicleComponent implements OnInit {
       this.selectedVehicles.filter(x => { return x != null && x != "" });
   }
 
-  /* GET VEHICLE LIST TO ITERATE OVER */
-  setCurrentVehicleListFn() {
-    let vehichleInUse = this.selectedVehicles.slice(0, this.currentIndex + 1);
-    this.currentVehicleList = this.appService.vehicleList.filter(x => {
-      let retVal = false;
-      if (vehichleInUse.indexOf(x.name) != -1) {
-        let currentCount: number = vehichleInUse.filter(vehc => vehc == x.name).length;
-        if (x.total_no - currentCount > 0) {
-          retVal = true;
-        }
+  /* GET total requried time */
+  getTotalTimeFn() {
+    let time = 0;
+    this.totalTimeArr.forEach(x => {
+      if (x > 0) {
+        time += x;
       }
-      else
-        retVal = true;
-
-      return retVal;
     })
+    return time;
   }
 
 }

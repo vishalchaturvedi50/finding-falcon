@@ -9,6 +9,8 @@ import { SelectplanetsComponent } from './selectplanets/selectplanets.component'
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SelectvehicleComponent } from './selectvehicle/selectvehicle.component';
+import { FilterVehicles } from './pipes/app.pipe';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { SelectvehicleComponent } from './selectvehicle/selectvehicle.component'
     SelectplanetsComponent,
     FooterComponent,
     HeaderComponent,
-    SelectvehicleComponent
+    SelectvehicleComponent,
+    FilterVehicles
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
