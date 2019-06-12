@@ -1,21 +1,12 @@
 @import "./../../commonstyle";
 
 :host {
- /*  min-height: 90vh; */
+  /*  min-height: 90vh; */
   @include flexProperty(column, unset, center);
 }
 
 .parent-div {
   .desc-title {
     color: $whitesmoke;
-  }
-  .desc-plantes {
-    img {
-      min-height: 5em;
-    }
-    figcaption {
-      color: $white;
-      font-variant: petite-caps;
-    }
   }
 }

@@ -1,0 +1,12 @@
+@import "./../../commonstyle";
+
+:host {
+  width: 100%;
+  @include flexProperty(column, unset, center);
+}
+
+.title {
+  color: $orange;
+  font-size: #{$oneptfive}em;
+  font-variant: $petitcaps;
+}

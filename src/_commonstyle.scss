@@ -4,6 +4,8 @@ $white: white;
 $oneptfive: 1.5;
 $one: 1;
 $orange: orange;
+$petitcaps: petite-caps;
+$allpetitcaps: all-petite-caps;
 
 /* MIXIN FOR FLEX PROPERTY */
 @mixin flexProperty($flexDirection, $alignItem, $justifyContent) {

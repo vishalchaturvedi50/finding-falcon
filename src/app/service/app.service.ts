@@ -21,6 +21,9 @@ export class AppService {
     /* Stores a list of vehicle */
     public vehicleList: Array<IVehicles> = [];
 
+    /* FORM DATA */
+    public falconeRequestData: IFalconeAPIRequest = { planet_names: [], vehicle_names: [] };
+
     constructor(private httpClient: HttpClient) {
         this.getPlanetsFn();
         this.getVehiclesFn();
