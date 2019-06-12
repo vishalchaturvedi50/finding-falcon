@@ -1,0 +1,12 @@
+@import "./../../commonstyle";
+
+:host {
+  /*  min-height: 90vh; */
+  @include flexProperty(column, unset, center);
+}
+
+.parent-div {
+  .desc-title {
+    color: $whitesmoke;
+  }
+}

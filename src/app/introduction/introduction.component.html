@@ -8,7 +8,7 @@
     </h3>
     <div class="d-flex row">
       <figure class="col-md-2 col-4 desc-plantes text-center" *ngFor="let item of appService.planetsList;let id=index">
-        <img class="img-fluid" src="./assets/planets/{{item.distance}}.svg" />
+        <img class="img-fluid" src="./assets/planets/{{item.name}}.svg" />
         <figcaption>{{item.name}}</figcaption>
       </figure>
     </div>
