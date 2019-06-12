@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { SelectplanetsComponent } from './selectplanets/selectplanets.component';
 import { SelectvehicleComponent } from './selectvehicle/selectvehicle.component';
+import { ResultsComponent } from './results/results.component';
 
 export const routePaths = {
   selectplanets: "selectplanets",
-  selectvehicles: "selectvehicles"
+  selectvehicles: "selectvehicles",
+  results: "results"
 }
 
 const routes: Routes = [
@@ -18,6 +20,8 @@ const routes: Routes = [
   },
   {
     path: routePaths.selectvehicles, component: SelectvehicleComponent
+  }, {
+    path: routePaths.results, component: ResultsComponent
   }
 ];
 

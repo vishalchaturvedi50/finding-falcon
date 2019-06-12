@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppService } from '../service/app.service';
 import { IVehicles } from '../models/vehicles';
 
@@ -7,7 +7,7 @@ import { IVehicles } from '../models/vehicles';
   templateUrl: './selectvehicle.component.html',
   styleUrls: ['./selectvehicle.component.scss']
 })
-export class SelectvehicleComponent implements OnInit {
+export class SelectvehicleComponent implements OnInit, OnDestroy {
 
   /* Selected planets */
   public selectedPlanets: Array<string> = [];
@@ -64,5 +64,10 @@ export class SelectvehicleComponent implements OnInit {
     })
     return time;
   }
+
+  ngOnDestroy(): void {
+    this.appService.falconeRequestData.vehicle_names = this.selectedVehicles;
+  }
+
 
 }

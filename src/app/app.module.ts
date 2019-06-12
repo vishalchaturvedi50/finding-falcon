@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { SelectvehicleComponent } from './selectvehicle/selectvehicle.component';
 import { FilterVehicles } from './pipes/app.pipe';
 import { CommonModule } from '@angular/common';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CommonModule } from '@angular/common';
     FooterComponent,
     HeaderComponent,
     SelectvehicleComponent,
-    FilterVehicles
+    FilterVehicles,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

@@ -62,7 +62,8 @@ export class AppService {
      * Function which will help us with the results of the request for searching falcon
      * @param requestBody - Accepts IFalconeAPIRequest type object
      */
-    findFalconeFn(requestBody: IFalconeAPIRequest) {
+    findFalconeFn() {
+        let requestBody = this.falconeRequestData;
         requestBody.token = this.apiToken.token;
         this.httpClient.post(apiUrls.findResponse, requestBody, { headers: this.headerConfig }).
             subscribe((response: IFalconeAPIResponse) => {

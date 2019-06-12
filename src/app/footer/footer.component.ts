@@ -41,6 +41,8 @@ export class FooterComponent implements OnInit {
         break;
       case `/${routePaths.selectplanets}`: nextUrl = routePaths.selectvehicles;
         break;
+      case `/${routePaths.selectvehicles}`: nextUrl = routePaths.results;
+        break;
     }
     this.nextRouteUrl = `/${nextUrl}`;
   }
