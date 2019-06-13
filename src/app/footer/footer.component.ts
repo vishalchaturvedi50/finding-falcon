@@ -13,6 +13,8 @@ export class FooterComponent implements OnInit {
 
   @Input() showNextRouteBtn: boolean = false;
 
+  @Input() showNextRouteBtnName: string = "Let's find out the Falcone !";
+
   /* varible to hold the path of next screen */
   public nextRouteUrl: string = "";
 

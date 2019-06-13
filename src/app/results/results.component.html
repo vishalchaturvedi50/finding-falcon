@@ -4,18 +4,26 @@
   <!-- 9/12 width div which holds heading and images -->
   <div class="col-md-9 desc-div order-md-0">
     <h3 class="desc-title text-justify ">
-      King Shan has received intelligence that Al Falcone is in hiding in one of these 6 planets.
+      <span *ngIf="sectionToShow==0">
+        Congratulations!. You have successfully found out the Falcone. King Shan is happy and impressed with
+        your performance in the game. Be ready for the reward soon.
+      </span>
+      <span *ngIf="sectionToShow==-1">
+        On Snap!. You were unsuccessfull. Although King Shan is very angry you can try again to help him
+        find out the Falcon. Best of luck as you need it.
+      </span>
     </h3>
-    <div class="d-flex row">
-      <figure class="col-md-2 col-4 desc-plantes text-center" *ngFor="let item of appService.planetsList;let id=index">
-        <img class="img-fluid" src="./assets/planets/{{item.distance}}.svg" />
-        <figcaption>{{item.name}}</figcaption>
+    <div class="d-flex row" *ngIf="sectionToShow==0">
+      <figure class=" col-6 desc-plantes text-center">
+        <img class="img-fluid" src="./assets/planets/{{responseData.planetName}}.svg" />
+        <figcaption>{{responseData.planetName}}</figcaption>
+      </figure>
+      <figure class=" col-6 desc-plantes text-center">
+        <img class="img-fluid" src="./assets/vehicles/{{responseData.vehicleName}}.svg" />
+        <figcaption>{{responseData.vehicleName}}</figcaption>
       </figure>
     </div>
-    <h3 class="desc-title text-justify ">
-      However he has limited resources at his disposal & can send his army to only 4 of these
-      planets.
-    </h3>
+
   </div>
   <!-- 3/12 width div holding king shan image -->
   <div class="col-md-3 text-center order-first order-md-1">
@@ -24,4 +32,4 @@
 
 </div>
 
-<app-footer [showNextRouteBtn]="true"></app-footer>
+<app-footer [showNextRouteBtn]="true" [showNextRouteBtnName]="'Retry the game again!'"></app-footer>

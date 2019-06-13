@@ -65,10 +65,7 @@ export class AppService {
     findFalconeFn() {
         let requestBody = this.falconeRequestData;
         requestBody.token = this.apiToken.token;
-        this.httpClient.post(apiUrls.findResponse, requestBody, { headers: this.headerConfig }).
-            subscribe((response: IFalconeAPIResponse) => {
-                console.log(response);
-            });
+        return this.httpClient.post(apiUrls.findResponse, requestBody, { headers: this.headerConfig });
     }
 
 }

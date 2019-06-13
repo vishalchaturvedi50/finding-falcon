@@ -10,3 +10,8 @@ export interface IFalconeAPIResponse {
     status?: string;
     error?: string;
 }
+
+
+export enum ResponseStatus {
+    error = "false", success = "success"
+}

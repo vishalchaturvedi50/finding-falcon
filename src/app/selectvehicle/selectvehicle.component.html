@@ -15,7 +15,7 @@
             class="col-6 col-md-3 desc-plantes text-center p-2"
             *ngFor="let item of currentVehicleList | filtervehicle:id;let id=index"
             (click)="vehicleSelectionFn(item,id)">
-            <img class="img vehicle-img" src="./assets/vehicles/{{item.max_distance}}.svg" />
+            <img class="img vehicle-img" src="./assets/vehicles/{{item.name}}.svg" />
             <figcaption>
                 <span>{{item.name}}</span> | <span>{{item.speed}} megamiles/hour</span>
             </figcaption>
