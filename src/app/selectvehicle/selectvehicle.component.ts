@@ -119,6 +119,7 @@ export class SelectvehicleComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.appService.footerDataSubj.next(new FooterConfig());
     this.appService.falconeRequestData.vehicle_names = this.selectedVehicles;
+    this.appService.totalTimeTaken = this.getTotalTimeFn();
   }
 
 

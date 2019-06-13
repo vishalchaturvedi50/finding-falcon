@@ -19,6 +19,7 @@ This challenges is set in the planet of Lengaburu. After the recent Falicornian 
 
  1. You should have Node JS pre installed and then you should run `npm install` for all the depend packages to be installed locally.
  2. You can then run the application on development server with help of `npm run-script start` and then navigate to `http://localhost:4200` to view the application.
+ 3. The application is best viewed in Chrome. 
 
 ## DEMO
 You can find a working application  hosted at [Finding Falcon](https://vishalchaturvedi50.github.io/finding-falcon/)

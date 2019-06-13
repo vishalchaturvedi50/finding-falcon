@@ -6,7 +6,10 @@
 
     <!-- SUCCESS MESSAGE -->
     <h3 class="desc-title text-justify" *ngIf="sectionToShow==0">
-      Congratulations!. You have successfully found the Falcone. King Shan is happy and impressed with
+      Congratulations!. You have successfully found the Falcone at {{responseData.planetName}} Planet with help of
+
+      {{responseData.vehicleName}} vehicle in {{responseData.timeTaken}} Units of time. King
+      Shan is happy and impressed with
       your performance in the game. Be ready for the reward soon.
     </h3>
 

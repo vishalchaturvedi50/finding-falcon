@@ -26,11 +26,16 @@ export class AppService {
     /* FORM DATA */
     public falconeRequestData: IFalconeAPIRequest;
 
+    /* TOTAL TIME TAKEN IN FINDING */
+    totalTimeTaken: number;
+
     /* FOOTER DATA SUBJECT */
     public footerDataSubj: Subject<FooterConfig> = new Subject();
 
     /* FOOTER BTN CLICK  */
     public footerBtnClickSubj: Subject<FooterBtnClick> = new Subject();
+
+
 
     constructor(private httpClient: HttpClient) {
         this.resetFn();
@@ -88,6 +93,7 @@ export class AppService {
     resetFn() {
         this.falconeRequestData = { planet_names: [], vehicle_names: [] };
         this.footerDataSubj.next(new FooterConfig());
+        this.totalTimeTaken = 0;
     }
 
 }

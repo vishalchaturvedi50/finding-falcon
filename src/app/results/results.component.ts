@@ -13,7 +13,9 @@ export class ResultsComponent implements OnInit {
   /* Variable to handle the section to be shown - 0 means success -1 mean error */
   public sectionToShow: number;
 
-  public responseData: { planetName: string, vehicleName: string } = { planetName: "", vehicleName: "" };
+  public responseData: { planetName: string, vehicleName: string, timeTaken: number } = {
+    planetName: "", vehicleName: "", timeTaken: 0
+  };
 
   constructor(private appService: AppService) { }
 
@@ -33,6 +35,7 @@ export class ResultsComponent implements OnInit {
           let idx = this.appService.falconeRequestData.planet_names.indexOf(response.planet_name);
           this.responseData.planetName = response.planet_name;
           this.responseData.vehicleName = this.appService.falconeRequestData.vehicle_names[idx];
+          this.responseData.timeTaken = this.appService.totalTimeTaken;
           this.sectionToShow = 0;
         }
       });
