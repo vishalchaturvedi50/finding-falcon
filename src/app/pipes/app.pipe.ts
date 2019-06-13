@@ -7,7 +7,10 @@ import { IVehicles } from '../models/vehicles';
 })
 export class FilterVehicles implements PipeTransform {
     transform(value: Array<IVehicles>, ...args: any[]) {
-        return value.filter(x => x.total_no > 0);
+        let currentSelectedVehicle = args[0];
+        return value.filter(x => {
+            return x.total_no > 0 || x.name == currentSelectedVehicle
+        });
     }
 
 }

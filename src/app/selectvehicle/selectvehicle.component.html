@@ -13,8 +13,8 @@
     <div class="d-flex row p-4">
         <figure [id]="item.name" [ngClass]="selectedVehicles[currentIndex]==item.name?'selected':''"
             class="col-6 col-md-3 desc-plantes text-center p-2"
-            *ngFor="let item of currentVehicleList | filtervehicle;let index=index"
-            (click)="vehicleSelectionFn(item,index)">
+            *ngFor="let item of currentVehicleList | filtervehicle:selectedVehicles[currentIndex];"
+            (click)="vehicleSelectionFn(item)">
             <img class="img vehicle-img" src="./assets/vehicles/{{item.name}}.svg" />
             <figcaption>
                 <span>{{item.name}}</span> | <span>{{item.speed}} megamiles/hour</span>
