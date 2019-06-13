@@ -1,7 +1,12 @@
 <!-- 100% width container holding large button to kickstart -->
 <div class="d-flex row footer">
-  <div class="col-md-12 order-md-2 text-center next-btn-div" *ngIf="showNextRouteBtn">
-    <button (click)="clickForRouteChangeFn()" class="btn btn-warning">{{showNextRouteBtnName}}</button>
+  <div class="col-md-12 order-md-2 d-flex row justify-content-around next-btn-div">
+    <button type="button" *ngIf="footerConfiguration.showPreviousBtn" class="btn btn-warning">
+      Prev.</button>
+
+    <button (click)="clickForRouteChangeFn()" *ngIf="footerConfiguration.showNextRouteBtn"
+      class="btn btn-warning">{{footerConfiguration.nextRouteBtnText}}</button>
+
+    <button type="button" *ngIf="footerConfiguration.showNextBtn" class="btn btn-warning float-right">Next </button>
   </div>
-  <ng-content></ng-content>
 </div>

@@ -19,14 +19,3 @@
         </figcaption>
     </figure>
 </div>
-
-
-<!-- FOOTER WITH CUSTOME CONTENT -->
-<app-footer [showNextRouteBtn]="enableNextRouteBtnFn()">
-    <div class="col-md-12  justify-content-between">
-        <button type="button" class="btn btn-warning" [disabled]="currentIndex==0" (click)="modifyCurrentIndexFn(-1)">
-            Prev.</button>
-        <button type="button" class="btn btn-warning float-right" [disabled]="currentIndex==selectedPlanets.length-1"
-            (click)="modifyCurrentIndexFn(1)">Next </button>
-    </div>
-</app-footer>

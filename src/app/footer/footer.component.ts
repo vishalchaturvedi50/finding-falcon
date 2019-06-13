@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { routePaths } from '../app-routing.module';
 import { AppService } from '../service/app.service';
 import { Route, Routes, Router, NavigationEnd } from '@angular/router';
+import { FooterConfig } from '../models/footer';
 
 
 @Component({
@@ -11,9 +12,8 @@ import { Route, Routes, Router, NavigationEnd } from '@angular/router';
 })
 export class FooterComponent implements OnInit {
 
-  @Input() showNextRouteBtn: boolean = false;
-
-  @Input() showNextRouteBtnName: string = "Let's find out the Falcone !";
+  /* Footer Configuration */
+  public footerConfiguration: FooterConfig = new FooterConfig();
 
   /* varible to hold the path of next screen */
   public nextRouteUrl: string = "";
@@ -21,6 +21,10 @@ export class FooterComponent implements OnInit {
 
   constructor(private appService: AppService, private router: Router) {
     this.subscribeToRouteChangesFn();
+
+    this.appService.footerDataSubj.subscribe((config: FooterConfig) => {
+      this.footerConfiguration = config;
+    });
   }
 
   ngOnInit() {

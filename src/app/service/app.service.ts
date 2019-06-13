@@ -5,6 +5,8 @@ import { IPlanets } from '../models/planets';
 import { IVehicles } from '../models/vehicles';
 import { ITokenResponse } from '../models/tokenresponse';
 import { IFalconeAPIRequest, IFalconeAPIResponse } from '../models/falconeapi';
+import { Footer, FooterConfig } from '../models/footer';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class AppService {
@@ -23,6 +25,9 @@ export class AppService {
 
     /* FORM DATA */
     public falconeRequestData: IFalconeAPIRequest;
+
+    /* FOOTER DATA SUBJECT */
+    public footerDataSubj: Subject<FooterConfig> = new Subject();
 
     constructor(private httpClient: HttpClient) {
         this.resetFn();
