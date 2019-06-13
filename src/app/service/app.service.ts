@@ -4,8 +4,8 @@ import { apiUrls } from 'src/environments/environment';
 import { IPlanets } from '../models/planets';
 import { IVehicles } from '../models/vehicles';
 import { ITokenResponse } from '../models/tokenresponse';
-import { IFalconeAPIRequest, IFalconeAPIResponse } from '../models/falconeapi';
-import { Footer, FooterConfig, FooterBtnClick } from '../models/footer';
+import { IFalconeAPIRequest } from '../models/falconeapi';
+import { FooterConfig, FooterBtnClick } from '../models/footer';
 import { Subject } from 'rxjs';
 
 @Injectable()
