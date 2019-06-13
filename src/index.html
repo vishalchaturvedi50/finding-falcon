@@ -12,7 +12,7 @@
 
 <body class="container-fluid">
   <!-- THIS WILL ACT AS A BACKGROUND IMAGE -->
-  <video autoplay="true" loop class="video-bg">
+  <video playsinline autoplay muted loop loop class="video-bg">
     <source src="./assets/bganimation.mp4" type="video/mp4">
   </video>
   <div class="bg-overlay"> </div>
@@ -22,6 +22,7 @@
   <script>
     /* FIX FOR Video not being played sometime on load */
     document.onload = function () {
+      debugger;
       document.getElementsByTagName('video-bg')[0].play();
     };
   </script>
