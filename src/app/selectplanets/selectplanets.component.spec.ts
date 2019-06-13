@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectplanetsComponent } from './selectplanets.component';
+import { AppService } from '../service/app.service';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('SelectplanetsComponent', () => {
   let component: SelectplanetsComponent;
@@ -8,9 +11,11 @@ describe('SelectplanetsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SelectplanetsComponent ]
+      declarations: [SelectplanetsComponent],
+      providers: [AppService],
+      imports: [HttpClientModule, RouterTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

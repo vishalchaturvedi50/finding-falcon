@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FooterComponent } from './footer.component';
+import { FooterBtnClick } from '../models/footer';
+import { AppService } from '../service/app.service';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -8,9 +11,11 @@ describe('FooterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FooterComponent ]
+      declarations: [FooterComponent],
+      providers: [AppService],
+      imports: [HttpClientModule, RouterTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +24,18 @@ describe('FooterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Component should be created ', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Should be intitialized with ENUM', () => {
+    expect(component.footerBtns).toEqual(FooterBtnClick);
+  });
+
+
+  it('Should be intitialized with ENUM', () => {
+    expect(component.footerBtns).toEqual(FooterBtnClick);
+  });
+
+
 });
