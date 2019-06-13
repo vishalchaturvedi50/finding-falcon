@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { routePaths } from '../app-routing.module';
 import { AppService } from '../service/app.service';
 import { Route, Routes, Router, NavigationEnd } from '@angular/router';
-import { FooterConfig } from '../models/footer';
+import { FooterConfig, FooterBtnClick } from '../models/footer';
 
 
 @Component({
@@ -11,6 +11,9 @@ import { FooterConfig } from '../models/footer';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+
+  /* Footer button cong */
+  public footerBtns = FooterBtnClick;
 
   /* Footer Configuration */
   public footerConfiguration: FooterConfig = new FooterConfig();
@@ -61,6 +64,14 @@ export class FooterComponent implements OnInit {
         break;
     }
     this.nextRouteUrl = `/${nextUrl}`;
+  }
+
+  /**
+   * Function to emit next button click
+   * @param value 
+   */
+  emitFooterBtnClickEventFn(value) {
+    this.appService.footerBtnClickSubj.next(value);
   }
 
 }

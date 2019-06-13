@@ -1,7 +1,12 @@
 export class FooterConfig {
-
     showNextRouteBtn?: boolean = true;
-    nextRouteBtnText?: string = "Let's find out the Falcone !";
-    showPreviousBtn?: boolean = true;
-    showNextBtn?: boolean = true;
+    nextRouteBtnText?: string = "Find Falcone!";
+    showPreviousBtn?: boolean = false;
+    showNextBtn?: boolean = false;
+    previousBtnDisabled?: boolean = false;
+    nextBtnDisabled?: boolean = false;
+}
+
+export enum FooterBtnClick {
+    Previous, Next, NextRoute
 }

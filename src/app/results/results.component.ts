@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../service/app.service';
 import { IFalconeAPIResponse, ResponseStatus } from '../models/falconeapi';
+import { FooterConfig } from '../models/footer';
 
 @Component({
   selector: 'app-results',
@@ -17,6 +18,12 @@ export class ResultsComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   ngOnInit() {
+    /* FOOTER CONFIG */
+    let footerConfig = new FooterConfig();
+    footerConfig.nextRouteBtnText = `Let's Retry to find the Falcone!`;
+    this.appService.footerDataSubj.next(footerConfig);
+
+    /* FIND FALCONE API CALL */
     this.appService.findFalconeFn().
       subscribe((response: IFalconeAPIResponse) => {
         if (response.status == ResponseStatus.error) {

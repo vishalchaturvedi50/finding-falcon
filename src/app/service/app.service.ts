@@ -5,7 +5,7 @@ import { IPlanets } from '../models/planets';
 import { IVehicles } from '../models/vehicles';
 import { ITokenResponse } from '../models/tokenresponse';
 import { IFalconeAPIRequest, IFalconeAPIResponse } from '../models/falconeapi';
-import { Footer, FooterConfig } from '../models/footer';
+import { Footer, FooterConfig, FooterBtnClick } from '../models/footer';
 import { Subject } from 'rxjs';
 
 @Injectable()
@@ -28,6 +28,9 @@ export class AppService {
 
     /* FOOTER DATA SUBJECT */
     public footerDataSubj: Subject<FooterConfig> = new Subject();
+
+    /* FOOTER BTN CLICK  */
+    public footerBtnClickSubj: Subject<FooterBtnClick> = new Subject();
 
     constructor(private httpClient: HttpClient) {
         this.resetFn();
@@ -78,7 +81,8 @@ export class AppService {
      * Reset all the selected values
      */
     resetFn() {
-        this.falconeRequestData = { planet_names: [], vehicle_names: [] }
+        this.falconeRequestData = { planet_names: [], vehicle_names: [] };
+        this.footerDataSubj.next(new FooterConfig());
     }
 
 }
