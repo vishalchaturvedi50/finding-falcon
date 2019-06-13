@@ -1,30 +1,24 @@
-<ng-container>
+<div class="d-flex row p-4">
 
-    <div class="d-flex row p-4">
+    <h3 class="title order-1 order-md-0 col-12 col-md-8">Select Vehicle to send at
+        {{selectedPlanets[currentIndex]}}
+        Planet</h3>
 
-        <h3 class="title order-1 order-md-0 col-12 col-md-8 text-center">Select Vehicle to send at
-            {{selectedPlanets[currentIndex]}}
-            Planet</h3>
+    <h2 class="text-right title col-12 order-0 order-md-1 col-md-4">Total Time : {{getTotalTimeFn()}} Hours</h2>
 
-        <h2 class="text-right title col-12 order-0 order-md-1 col-md-4">Total Time : {{getTotalTimeFn()}} Hours</h2>
+</div>
 
-    </div>
-
-    <div class="d-flex row p-4">
-        <figure [id]="item.name" [ngClass]="selectedVehicles[currentIndex]==item.name?'selected':''"
-            class="col-6 col-md-3 desc-plantes text-center p-2"
-            *ngFor="let item of currentVehicleList | filtervehicle:selectedVehicles[currentIndex];"
-            (click)="vehicleSelectionFn(item)">
-            <img class="img vehicle-img" src="./assets/vehicles/{{item.name}}.svg" />
-            <figcaption>
-                <span>{{item.name}}</span> | <span>{{item.speed}} megamiles/hour</span>
-            </figcaption>
-        </figure>
-    </div>
-
-</ng-container>
-
-
+<div class="d-flex row p-4">
+    <figure [id]="item.name" [ngClass]="selectedVehicles[currentIndex]==item.name?'selected':''"
+        class="col-6 col-md-3 desc-figure text-center p-2"
+        *ngFor="let item of currentVehicleList | filtervehicle:selectedVehicles[currentIndex];"
+        (click)="vehicleSelectionFn(item)">
+        <img class="img vehicle-img" src="./assets/vehicles/{{item.name}}.svg" />
+        <figcaption>
+            <span>{{item.name}}</span> | <span>{{item.speed}} megamiles/hour</span>
+        </figcaption>
+    </figure>
+</div>
 
 
 <!-- FOOTER WITH CUSTOME CONTENT -->

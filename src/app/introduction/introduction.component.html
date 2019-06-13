@@ -1,5 +1,5 @@
 <!-- PARENT CONTAINER -->
-<div class="d-flex row parent-div p-1">
+<div class="d-flex row parent-div p-4">
 
   <!-- 9/12 width div which holds heading and images -->
   <div class="col-md-9 desc-div order-md-0">
@@ -7,18 +7,25 @@
       King Shan has received intelligence that Al Falcone is in hiding in one of these 6 planets.
     </h3>
     <div class="d-flex row">
-      <figure class="col-md-2 col-4 desc-plantes text-center" *ngFor="let item of appService.planetsList;let id=index">
-        <img class="img-fluid" src="./assets/planets/{{item.name}}.svg" />
+      <figure class="col-md-2 col-4 desc-figure text-center" *ngFor="let item of appService.planetsList;let id=index">
+        <img class="img-fluid planet-img" src="./assets/planets/{{item.name}}.svg" />
+        <figcaption>{{item.name}}</figcaption>
+      </figure>
+    </div>
+    <div class="d-flex row">
+      <figure class="col-3 desc-figure text-center" *ngFor="let item of appService.vehicleList;let id=index">
+        <img class="img-fluid vehicle-img" src="./assets/vehicles/{{item.name}}.svg" />
         <figcaption>{{item.name}}</figcaption>
       </figure>
     </div>
     <h3 class="desc-title text-justify ">
       However he has limited resources at his disposal & can send his army to only 4 of these
-      planets.
+      planets. Your task is to select the planet and the vehicles you would like to send to those planets.
+      Good luck hunting the Falcone.
     </h3>
   </div>
   <!-- 3/12 width div holding king shan image -->
-  <div class="col-md-3 text-center order-first order-md-1">
+  <div class="col-md-3 d-flex row align-items-center order-first justify-content-center order-md-1">
     <img src="./assets/kingshan.png" class="img-fluid" />
   </div>
 

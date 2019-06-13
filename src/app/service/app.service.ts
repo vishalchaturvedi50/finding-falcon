@@ -22,9 +22,10 @@ export class AppService {
     public vehicleList: Array<IVehicles> = [];
 
     /* FORM DATA */
-    public falconeRequestData: IFalconeAPIRequest = { planet_names: [], vehicle_names: [] };
+    public falconeRequestData: IFalconeAPIRequest;
 
     constructor(private httpClient: HttpClient) {
+        this.resetFn();
         this.getPlanetsFn();
         this.getVehiclesFn();
         this.getTokenFn();
@@ -66,6 +67,13 @@ export class AppService {
         let requestBody = this.falconeRequestData;
         requestBody.token = this.apiToken.token;
         return this.httpClient.post(apiUrls.findResponse, requestBody, { headers: this.headerConfig });
+    }
+
+    /**
+     * Reset all the selected values
+     */
+    resetFn() {
+        this.falconeRequestData = { planet_names: [], vehicle_names: [] }
     }
 
 }

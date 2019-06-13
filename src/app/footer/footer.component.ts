@@ -35,6 +35,14 @@ export class FooterComponent implements OnInit {
     })
   }
 
+  /* CLICK ON CHange of route button */
+  clickForRouteChangeFn() {
+    if (this.nextRouteUrl == `/${routePaths.home}`) {
+      this.appService.resetFn();
+    }
+    this.router.navigate([this.nextRouteUrl]);
+  }
+
   /* Function to set next route url on the basics of current url */
   setNextRouteUrlFn(currentUrl: string = "") {
     let nextUrl = "";
@@ -44,6 +52,8 @@ export class FooterComponent implements OnInit {
       case `/${routePaths.selectplanets}`: nextUrl = routePaths.selectvehicles;
         break;
       case `/${routePaths.selectvehicles}`: nextUrl = routePaths.results;
+        break;
+      case `/${routePaths.results}`: nextUrl = routePaths.home
         break;
     }
     this.nextRouteUrl = `/${nextUrl}`;

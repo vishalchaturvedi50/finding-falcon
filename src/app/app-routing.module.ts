@@ -6,6 +6,7 @@ import { SelectvehicleComponent } from './selectvehicle/selectvehicle.component'
 import { ResultsComponent } from './results/results.component';
 
 export const routePaths = {
+  home: '',
   selectplanets: "selectplanets",
   selectvehicles: "selectvehicles",
   results: "results"
