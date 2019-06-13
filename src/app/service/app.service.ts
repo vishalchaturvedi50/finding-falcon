@@ -34,37 +34,42 @@ export class AppService {
 
     constructor(private httpClient: HttpClient) {
         this.resetFn();
-        this.getPlanetsFn();
-        this.getVehiclesFn();
-        this.getTokenFn();
+        this.getInitialDataFn();
+
+    }
+
+    getInitialDataFn() {
+        this.getPlanetsFn().subscribe((response: Array<IPlanets>) => {
+            this.planetsList = response;
+        });
+        this.getVehiclesFn().subscribe((response: Array<IVehicles>) => {
+            this.vehicleList = response;
+        })
+        this.getTokenFn().
+            subscribe((response: ITokenResponse) => {
+                this.apiToken = response;
+            });
     }
 
     /**
      * A function to get list of available vehicles
      */
     getVehiclesFn() {
-        this.httpClient.get(apiUrls.getVehicles).subscribe((response: Array<IVehicles>) => {
-            this.vehicleList = response;
-        })
+        return this.httpClient.get(apiUrls.getVehicles)
     }
 
     /**
      * A function to get list of available Planets
      */
     getPlanetsFn() {
-        this.httpClient.get(apiUrls.getPlanets).subscribe((response: Array<IPlanets>) => {
-            this.planetsList = response;
-        })
+        return this.httpClient.get(apiUrls.getPlanets);
     }
 
     /**
      * A function to get the token if it doesn't already exsists
      */
     getTokenFn() {
-        this.httpClient.post(apiUrls.getToken, null, { headers: this.headerConfig }).
-            subscribe((response: ITokenResponse) => {
-                this.apiToken = response;
-            })
+        return this.httpClient.post(apiUrls.getToken, null, { headers: this.headerConfig })
     }
 
     /**
@@ -73,7 +78,7 @@ export class AppService {
      */
     findFalconeFn() {
         let requestBody = this.falconeRequestData;
-        requestBody.token = this.apiToken.token;
+        requestBody.token = this.apiToken ? this.apiToken.token : "";
         return this.httpClient.post(apiUrls.findResponse, requestBody, { headers: this.headerConfig });
     }
 
